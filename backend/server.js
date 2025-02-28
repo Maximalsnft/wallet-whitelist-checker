@@ -1,27 +1,3 @@
-const express = require('express');
-const cors = require('cors');
-const fs = require('fs');
-
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-// Enable CORS for all requests
-app.use(cors());
-app.use(express.json());
-
-// Load whitelist file
-const whitelistFile = './backend/whitelist.json';
-
-// ✅ Print whitelist on server start (for debugging)
-fs.readFile(whitelistFile, 'utf8', (err, data) => {
-    if (err) {
-        console.error('❌ Error reading whitelist:', err);
-    } else {
-        console.log('✅ Whitelist Loaded:', data);
-    }
-});
-
-// API route to check if wallet is whitelisted
 app.post('/check-whitelist', (req, res) => {
     const { wallet } = req.body;
 
@@ -36,18 +12,15 @@ app.post('/check-whitelist', (req, res) => {
         }
 
         const whitelist = JSON.parse(data);
-        console.log('📡 Checking wallet:', wallet); // ✅ Debugging log
-        console.log('🔍 Whitelist contains:', whitelist);
+        console.log('✅ Whitelist loaded:', whitelist); // Debugging whitelist contents
+        console.log('📡 Checking wallet:', wallet);
 
         if (whitelist.includes(wallet)) {
+            console.log('✅ Wallet is whitelisted!');
             res.json({ whitelisted: true });
         } else {
+            console.log('❌ Wallet NOT whitelisted.');
             res.json({ whitelisted: false });
         }
     });
-});
-
-// Start server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
 });

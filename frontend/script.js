@@ -9,7 +9,7 @@ function checkWhitelist() {
 
     console.log('🔍 Checking wallet:', wallet); // ✅ Debugging log
 
-    fetch('https://nodejs-production-94c70.up.railway.app/check-whitelist', {
+    fetch('https://wallet-whitelist-checker.vercel.app', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ wallet: wallet })

@@ -1,209 +1,101 @@
 /* ================================================== */
-/*              Global Reset & Base Styles          */
+/*              Global Reset & Base Styles           */
 /* ================================================== */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    line-height: 1.6;
-    padding-top: 80px; /* To account for fixed header */
-  }
-  
-  /* Container for centralizing content */
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* ================================================== */
-  /*                Header & Navigation               */
-  /* ================================================== */
-  .site-header {
-    background: rgba(0, 0, 0, 0.85);
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #333;
-  }
-  
-  .header-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-  }
-  
-  .logo-container .logo {
-    width: 60px;
-    height: auto;
-  }
-  
-  .site-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-  }
-  
-  .site-nav a {
-    color: #FFDC00; /* Bright yellow links */
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .site-nav a:hover {
-    color: #e6c200;
-  }
-  
-  /* ================================================== */
-  /*                     HERO SECTION                 */
-  /* ================================================== */
-  .hero-section {
-    background: #000;
-    padding: 120px 20px 60px;
-    text-align: center;
-    position: relative;
-  }
-  
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+/* ================================================== */
+/*                   HEADER & NAVIGATION             */
+/* ================================================== */
+.site-header {
+  background: rgba(0, 0, 0, 0.85);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.logo {
+  width: 60px;
+}
+
+.site-nav a {
+  color: #FFDC00;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 1rem;
+}
+
+/* ================================================== */
+/*                   HERO SECTION                     */
+/* ================================================== */
+.hero-section {
+  text-align: center;
+  padding: 120px 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  background: linear-gradient(90deg, #FFDC00, #800080, #FFC0CB, #FF0000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checker-box {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* ================================================== */
+/*                 BACKGROUND VIDEO                   */
+/* ================================================== */
+.video-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  z-index: -1;
+}
+
+#bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ================================================== */
+/*                   FOOTER SECTION                   */
+/* ================================================== */
+.site-footer {
+  background: #000;
+  padding: 15px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
   .hero-title {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    /* Gradient text effect: bright yellow, purple, pink, red */
-    background: linear-gradient(90deg, #FFDC00, #800080, #FFC0CB, #FF0000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
   }
-  
-  .hero-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-    color: #ccc;
-  }
-  
-  /* ================================================== */
-  /*                Checker Box Styling               */
-  /* ================================================== */
-  .checker-box {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 25px;
-    border-radius: 10px;
-    display: inline-block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  }
-  
-  .checker-box input {
-    width: 80%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    font-size: 1rem;
-    text-align: center;
-    background: #222;
-    color: #e0e0e0;
-  }
-  
-  .checker-box button {
-    padding: 12px 25px;
-    background-color: #FFDC00;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    transition: background 0.3s ease;
-  }
-  
-  .checker-box button:hover {
-    background-color: #e6c200;
-  }
-  
-  /* Message styles for notifications that fade out */
-  .message {
-    margin-top: 10px;
-    font-weight: bold;
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  /* ================================================== */
-  /*                    Footer Section                */
-  /* ================================================== */
-  .site-footer {
-    background: rgba(0, 0, 0, 0.85);
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  .footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .socials {
-    margin-bottom: 10px;
-  }
-  
-  .socials a {
-    margin: 0 10px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-  }
-  
-  .socials a:hover {
-    transform: scale(1.1);
-  }
-  
-  /* ================================================== */
-  /*             Responsive & Mobile Styles           */
-  /* ================================================== */
-  @media (max-width: 768px) {
-    .header-inner {
-      flex-direction: column;
-      align-items: center;
-    }
-    .site-nav ul {
-      flex-direction: column;
-      gap: 10px;
-    }
-    .hero-title {
-      font-size: 2.5rem;
-    }
-    .checker-box input {
-      width: 100%;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-title {
-      font-size: 2rem;
-    }
-    .hero-subtitle {
-      font-size: 1rem;
-    }
-    .checker-box {
-      padding: 15px;
-    }
-  }  
+}

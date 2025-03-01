@@ -2,26 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <!-- Responsive meta tag to ensure proper scaling on mobile, tablet, and desktop -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Maximals NFT Whitelist Checker</title>
-  <!-- Link to external stylesheet -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <!-- HEADER SECTION -->
   <header class="site-header">
     <div class="header-inner">
-      <!-- Logo Container (ensure assets/logo.png exists) -->
       <div class="logo-container">
         <img src="assets/logo.png" alt="Maximals NFT Logo" class="logo">
       </div>
-      <!-- Navigation Menu -->
       <nav class="site-nav">
-        <ul>
-          <li><a href="https://maximalsnft.com/whitepaper.pdf" target="_blank">Whitepaper</a></li>
-          <li><a href="https://twitter.com/maximalsnft" target="_blank">X</a></li>
-        </ul>
+        <a href="#">Home</a>
+        <a href="https://maximalsnft.com/whitepaper.pdf" target="_blank">Whitepaper</a>
+        <a href="https://x.com/maximalsnft" target="_blank">X</a>
       </nav>
     </div>
   </header>
@@ -29,40 +24,35 @@
   <!-- HERO SECTION -->
   <section id="hero" class="hero-section">
     <div class="hero-content">
-      <!-- Gradient text "ARE YOU A MAXIMAL?" -->
       <h1 class="hero-title">ARE YOU A MAXIMAL?</h1>
-      <p class="hero-subtitle">Check if your wallet is whitelisted and join the elite.</p>
-      <!-- Wallet Checker Container -->
+      <p class="hero-subtitle">Check if your wallet is whitelisted and join the movement.</p>
       <div class="checker-box">
         <input type="text" id="walletInput" placeholder="Enter your wallet address">
         <button id="checkButton" onclick="checkWhitelist()">Check</button>
-        <!-- Message area for interactive feedback (auto fades after 2 seconds) -->
         <p id="message" class="message"></p>
       </div>
     </div>
   </section>
 
+  <!-- BACKGROUND VIDEO -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline id="bgVideo">
+      <source src="assets/background.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
   <!-- FOOTER SECTION -->
   <footer class="site-footer">
     <div class="footer-content">
       <div class="socials">
-        <!-- Social icons: Replace with your actual icons or SVGs -->
-        <a href="https://twitter.com/maximalsnft" target="_blank" title="Twitter">
-          <svg width="24" height="24" fill="#FFDC00" viewBox="0 0 24 24">
-            <path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.3 4.3 0 001.88-2.37 8.59 8.59 0 01-2.72 1.04 4.28 4.28 0 00-7.29 3.9A12.14 12.14 0 013 4.79a4.27 4.27 0 001.32 5.71 4.25 4.25 0 01-1.94-.54v.05a4.28 4.28 0 003.43 4.19 4.3 4.3 0 01-1.93.07 4.28 4.28 0 004 2.98A8.59 8.59 0 012 19.54 12.13 12.13 0 008.29 21c7.55 0 11.68-6.26 11.68-11.68 0-.18 0-.35-.01-.53A8.36 8.36 0 0022.46 6z"></path>
-          </svg>
-        </a>
-        <a href="https://discord.com/invite/maximals" target="_blank" title="Discord">
-          <svg width="24" height="24" fill="#FFDC00" viewBox="0 0 24 24">
-            <path d="M20.317 4.369a19.791 19.791 0 00-4.885-1.515.07.07 0 00-.073.035 13.14 13.14 0 00-1.252 2.572 18.557 18.557 0 00-5.36 0 13.117 13.117 0 00-1.252-2.572.07.07 0 00-.073-.035 19.736 19.736 0 00-4.885 1.515.066.066 0 00-.031.027C.533 9.045-.319 13.579.099 18.057a.082.082 0 00.03.055 19.93 19.93 0 005.993 3.055.07.07 0 00.077-.027 14.932 14.932 0 001.283-2.078.07.07 0 00-.04-.097 13.314 13.314 0 01-1.89-.904.07.07 0 01-.007-.118c.126-.095.252-.192.374-.291a.07.07 0 01.076-.01c3.98 1.82 8.3 1.82 12.28 0a.07.07 0 01.078.009c.122.099.248.196.374.29a.07.07 0 01-.006.119 13.29 13.29 0 01-1.89.904.07.07 0 00-.04.098 14.88 14.88 0 001.283 2.077.07.07 0 00.077.028 19.93 19.93 0 005.993-3.055.082.082 0 00.03-.055c.5-5.177-.838-9.661-3.548-13.66a.063.063 0 00-.03-.028z"></path>
-          </svg>
-        </a>
+        <a href="https://twitter.com/maximalsnft" target="_blank">Twitter</a>
+        <a href="https://discord.gg/maximalsnft" target="_blank">Discord</a>
       </div>
       <p>&copy; 2025 Maximals NFT. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Include JavaScript files: whitelist data and main interactive logic -->
   <script src="whitelist.js"></script>
   <script src="script.js"></script>
 </body>
